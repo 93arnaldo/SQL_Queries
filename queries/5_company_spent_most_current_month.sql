@@ -10,7 +10,7 @@ INNER JOIN ( --Subquery to select the company that spent the most money in each 
     p.company_id AS company_id,
     convert(month, getDATE()) AS current_month
   FROM
-    purchase p
+    purchases p
   INNER JOIN
     materials b
   ON
