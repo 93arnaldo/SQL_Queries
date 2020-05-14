@@ -7,11 +7,11 @@ and then limit the results to one row. If the DB is huge, it can take a lot of t
 SELECT
   m.name
 FROM
-  building_material m
+  materials m
 INNER JOIN
   purchase p
 ON
-  m.id = p.building_material_id
+  m.id = p.material_id
 ORDER BY
   p.quantity DESC
 LIMIT
@@ -23,12 +23,12 @@ Then join the resulted table with the building_material table and select the nam
 SELECT
   m.name
 FROM
-  building_material m
+  materials m
 INNER JOIN (
   SELECT
     MAX(quantity),
-    building_material_id
+    material_id
   FROM
     purchase) max_quant
 ON
-  max_quant.building_material_id = building_material.id;
+  max_quant.material_id = materials.id;
