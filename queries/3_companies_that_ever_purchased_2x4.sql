@@ -4,7 +4,7 @@ SELECT
 FROM
   companies c
 RIGHT OUTER JOIN -- To keep all the purchase records and include the construction company information 
-  purchase p
+  purchases p
 ON
   p.company_id = c.id 
 LEFT OUTER JOIN -- To keep all the purchase record and include the materials information 
