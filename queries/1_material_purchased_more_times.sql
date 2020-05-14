@@ -9,7 +9,7 @@ SELECT
 FROM
   materials m
 INNER JOIN
-  purchase p
+  purchases p
 ON
   m.id = p.material_id
 ORDER BY
@@ -29,6 +29,6 @@ INNER JOIN (
     MAX(quantity),
     material_id
   FROM
-    purchase) max_quant
+    purchases) max_quant
 ON
   max_quant.material_id = materials.id;
