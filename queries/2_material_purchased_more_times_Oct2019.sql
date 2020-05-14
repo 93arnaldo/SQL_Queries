@@ -12,7 +12,7 @@ INNER JOIN (--Subquery to select the materials with the most purchases
     EXTRACT (MONTH FROM datetime) AS Month,
     EXTRACT (YEAR FROM datetime) AS Year
   FROM
-    purchase
+    purchases
   WHERE --Including the WHERE clause inside the subquery because otherwise the subquery will return the max(quantity) of all time
     Month = 10
     AND Year = 2019) max_quant
